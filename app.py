@@ -19,13 +19,13 @@ st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;
 
 col1, col2, col3 = st.columns([2,1,2])
 with col2:
-    with st.container(width=border=True):
+    with st.container(border=True):
         job_description = st.text_area("**Enter the Job Description**")
         resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
                                         accept_multiple_files=True)
         
         col1_b, col2_b, col3_b = st.columns([2,1,2])
-        with col2_b;
+        with col2_b:
             if job_description and resume_files:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=False)
