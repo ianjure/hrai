@@ -41,7 +41,7 @@ button {
 .block-container {
     padding-top: 0rem;
     padding-bottom: 2rem;
-    margin-top: 0rem;
+    margin-top: 1rem;
 }
 /* REMOVE TEXT LINK */
 [data-testid="stHeaderActionElements"] {
