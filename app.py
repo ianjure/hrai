@@ -2,8 +2,13 @@ import pandas as pd
 import streamlit as st
 from utils import extract_text, summarize_resume, score_resume
 
+# INITIALIZE GEMINI API KEY
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+
+# PAGE CONFIGURATION
 st.set_page_config(page_title="HR AI", layout="wide")
 
+# MAIN USER INTERFACE
 st.title("HR resume screening assistance tool")
 
 job_description = st.text_area("Enter the job description")
@@ -33,11 +38,11 @@ if automate_button:
 
         # EXTRACT TEXT AND SUMMARIZE RESUME CONTENT
         content = extract_text(resume)
-        content_summary = summarize_resume(content, "AIzaSyCjvmsPbDJKqMINnFuCmpJOcCvYrve2xfQ")
+        content_summary = summarize_resume(content, GOOGLE_API_KEY)
         summary_list.append(content_summary)
 
         # GENERATE RESUME SCORE AND DESCRIPTION
-        resume_score, resume_description = score_resume(content_summary, job_description, "AIzaSyCjvmsPbDJKqMINnFuCmpJOcCvYrve2xfQ")
+        resume_score, resume_description = score_resume(content_summary, job_description, GOOGLE_API_KEY)
         score_list.append(resume_score)
         description_list.append(resume_description)
     
