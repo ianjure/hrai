@@ -6,7 +6,7 @@ from utils import extract_text, summarize_resume, score_resume
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # PAGE CONFIGURATION
-st.set_page_config(page_title="WorkFit AI", layout="centered")
+st.set_page_config(page_title="WorkFit AI", layout="wide")
 with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
@@ -14,16 +14,21 @@ with open( "style.css" ) as css:
 st.title("HR Resume Screening Assistance Tool")
 
 with st.container(border=True):
-    job_description = st.text_area("Enter the job description")
-    resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
-                                    accept_multiple_files=True)
-    
-    if job_description and resume_files:
-        automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
-                                    type="primary", use_container_width=True)
-    else:
-        automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
-                                    type="primary", use_container_width=True)
+    column1, column2 = st.columns(2)
+
+    with column1:
+            job_description = st.text_area("Enter the job description")
+
+    with column2:
+            resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
+                                            accept_multiple_files=True)
+            
+            if job_description and resume_files:
+                automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
+                                            type="primary", use_container_width=True)
+            else:
+                automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
+                                            type="primary", use_container_width=True)
 
 if automate_button:
     name_list = []
