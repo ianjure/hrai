@@ -93,3 +93,6 @@ div[data-testid="stStatusWidget"] {
     padding-left: 3rem;
     padding-right: 3rem;
 }
+[data-testid="stFileUploaderDropzoneInstructions"] {
+    display: grid;
+}
