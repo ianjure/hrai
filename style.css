@@ -28,7 +28,8 @@ a {
 /* STYLE BUTTON */
 [data-testid="stBaseButton-secondary"] {
     border-radius: 4rem;
-    width: 75%;
+    width: 60%;
+    margin: auto;
 }
 button {
   font-family: 'Poppins', sans-serif !important;
@@ -92,8 +93,8 @@ div[data-testid="stStatusWidget"] {
 [data-testid="stFileUploaderDropzone"] {
     height: 16.63rem;
     display: grid;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
