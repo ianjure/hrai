@@ -90,8 +90,8 @@ div[data-testid="stStatusWidget"] {
 [data-testid="stFileUploaderDropzone"] {
     height: 16.63rem;
     display: grid;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
