@@ -62,9 +62,8 @@ def score_resume(resume_summary, job_description, api_key):
 
                 And give it a score ranging from 1-100.
 
-                This is what you should only return:
-                1. The score
-                2. Short explanation (1 paragraph)
+                Follow this format and answer directly:
+                The score - Short explanation (1 paragraph)
                 """
     prompt = PromptTemplate.from_template(template)
 
@@ -76,10 +75,7 @@ def score_resume(resume_summary, job_description, api_key):
     result = llm_response.content
 
     # EXTRACT SCORE AND DESCRIPTION
-    pattern = r"1\.\s*(\d+)\s*2\.\s*(.+)"
-    match = re.match(pattern, result)
-    if match:
-        score = match.group(1)
-        description = match.group(2)
+    score = int(result.split("-")[0].strip())
+    description = result.split("-")[1]
 
     return score, description
