@@ -31,23 +31,28 @@ button {
 .stContainer > div {
     width: 20rem;
 }
+/* ADJUST HEADER */
 [data-testid="stHeader"] {
     height: 5.3rem;
     width: auto;
     z-index: 1;
 }
+/* ADJUST TOP PADDING */
 .block-container {
     padding-top: 0rem;
     padding-bottom: 2rem;
     margin-top: 0rem;
 }
+/* REMOVE TEXT LINK */
 [data-testid="stHeaderActionElements"] {
     display: none;
 }
+/* ADJUST LOGO SIZE */
 [data-testid="stLogo"] {
     width: 12rem;
     height: auto;
 }
+/* HIDE MENU */
 #MainMenu {
     visibility: hidden;
 }
