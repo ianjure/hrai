@@ -97,5 +97,5 @@ div[data-testid="stStatusWidget"] {
     display: grid;
 }
 small {
-  text-align: center;
+    text-align: center;
 }
