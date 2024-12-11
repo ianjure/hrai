@@ -96,3 +96,6 @@ div[data-testid="stStatusWidget"] {
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
 }
+small {
+  text-align: center;
+}
