@@ -94,8 +94,8 @@ div[data-testid="stStatusWidget"] {
     display: grid;
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
