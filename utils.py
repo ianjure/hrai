@@ -76,10 +76,9 @@ def score_resume(resume_summary, job_description, api_key):
     # GENERATE RESUME SUMMARY
     llm_response = chain.invoke({"resume_summary": resume_summary, "job_description": job_description})
     result = llm_response.content
-    print(result)
 
-    # EXTRACT SCORE AND DESCRIPTION
+    # EXTRACT SCORE AND ANALYSIS
     score = int(result.split(" - ")[0])
-    description = result.split(" - ")[1]
+    analysis = result.split(" - ")[1]
 
-    return score, description
+    return score, analysis
