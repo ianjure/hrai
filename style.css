@@ -76,6 +76,8 @@ div[data-testid="stStatusWidget"] {
 [id="text_area_1"] {
     height: 20rem;
     background-color: white;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 /* CONTAINER BACKGROUND COLOR */
 [class="st-emotion-cache-4uzi61 eiemyj5"] {
