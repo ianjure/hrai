@@ -24,10 +24,10 @@ with st.container(border=True):
     
     if job_description and resume_files:
         automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
-                                    type="primary", use_container_width=True)
+                                    type="primary", use_container_width=False)
     else:
         automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
-                                    type="primary", use_container_width=True)
+                                    type="primary", use_container_width=False)
 
 # WHEN BUTTON IS CLICKED
 if automate_button:
