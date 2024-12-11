@@ -16,7 +16,6 @@ span {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
   text-align: center;
-  margin: 0;
 }
 p {
   font-family: 'Poppins', sans-serif !important;
@@ -97,6 +96,9 @@ div[data-testid="stStatusWidget"] {
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
+    margin: 0;
+}
+[class="st-emotion-cache-yckwz8 es2srfl2"] {
     margin: 0;
 }
 small {
