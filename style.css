@@ -85,7 +85,10 @@ div[data-testid="stStatusWidget"] {
     border: solid 0.5px #d0e3fb;
     box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
 }
-/* ADJUST FILE DROP HEIGHT */
+/* ADJUST FILE DROP */
 [data-testid="stFileUploaderDropzone"] {
     height: 16.63rem;
+    display: grid;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
