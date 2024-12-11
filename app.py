@@ -21,10 +21,10 @@ with st.container(border=True):
     column1, column2 = st.columns(2, vertical_alignment="bottom")
 
     with column1:
-            job_description = st.text_area("Enter the Job Description")
+            job_description = st.text_area("**Enter the Job Description**")
 
     with column2:
-            resume_files = st.file_uploader("Upload the Resume/s", type=['pdf'],
+            resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
                                             accept_multiple_files=True)
             
             if job_description and resume_files:
