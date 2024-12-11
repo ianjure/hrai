@@ -30,6 +30,10 @@ a {
     border-radius: 4rem;
     width: 50%;
     margin: auto;
+    margin-top: 2rem;
+}
+[data-testid="stBaseButton-primary"] {
+    border-radius: 4rem;
 }
 button {
   font-family: 'Poppins', sans-serif !important;
