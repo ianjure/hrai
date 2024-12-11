@@ -18,7 +18,7 @@ st.markdown("<h2 style='text-align: center;'>HR Resume Screening Assistance Tool
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
 with st.container(border=True):
-    column1, column2 = st.columns(2)
+    column1, column2 = st.columns(2, vertical_alignment="bottom")
 
     with column1:
             job_description = st.text_area("Enter the Job Description")
