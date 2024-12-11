@@ -26,11 +26,8 @@ a {
   font-weight: 300;
 }
 /* STYLE BUTTON */
-[data-testid="stBaseButton-secondary"] {
-    border-radius: 4rem;
-    width: 40%;
-    margin: auto;
-    margin-top: 2rem;
+[class="st-emotion-cache-1cfymjn e1obcldf2"] {
+    display: none;
 }
 [data-testid="stBaseButton-primary"] {
     border-radius: 4rem;
