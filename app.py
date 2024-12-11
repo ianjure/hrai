@@ -34,6 +34,7 @@ with st.container(border=True):
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
                                             type="primary", use_container_width=True)
 
+# WHEN BUTTON IS CLICKED
 if automate_button:
     name_list = []
     summary_list = []
@@ -52,7 +53,7 @@ if automate_button:
         content_summary = summarize_resume(content, GOOGLE_API_KEY)
         summary_list.append(content_summary)
 
-        # GENERATE RESUME SCORE AND DESCRIPTION
+        # GENERATE RESUME SCORE AND ANALYSIS
         resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
         score_list.append(resume_score)
         analysis_list.append(resume_analysis)
