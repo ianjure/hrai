@@ -17,7 +17,7 @@ with open( "style.css" ) as css:
 st.markdown("<h2 style='text-align: center; padding-bottom: 0;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([0.08,1,0.08])
+col1, col2, col3 = st.columns([0.06,1,0.06])
 with col2:
     with st.container(border=True):
         job_description = st.text_area("**Job Description**", height=200)
@@ -33,35 +33,35 @@ with col2:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
                                             type="primary", use_container_width=True)
 
-# WHEN BUTTON IS CLICKED
-if automate_button:
-    name_list = []
-    summary_list = []
-    score_list = []
-    analysis_list = []
-
-    # LOOP THROUGH ALL THE RESUME
-    for resume in resume_files:
-        
-        # EXTRACT APPLICANT NAME
-        applicant_name = resume.name.replace(".pdf", "")
-        name_list.append(applicant_name)
-
-        # EXTRACT TEXT AND SUMMARIZE RESUME CONTENT
-        content = extract_text(resume)
-        content_summary = summarize_resume(content, GOOGLE_API_KEY)
-        summary_list.append(content_summary)
-
-        # GENERATE RESUME SCORE AND ANALYSIS
-        resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
-        score_list.append(resume_score)
-        analysis_list.append(resume_analysis)
+    # WHEN BUTTON IS CLICKED
+    if automate_button:
+        name_list = []
+        summary_list = []
+        score_list = []
+        analysis_list = []
     
-    # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-    results_table = pd.DataFrame({"NAME": name_list,
-                       "SUMMARY": summary_list,
-                       "ANALYSIS": analysis_list,
-                       "SCORE": score_list,})
-    results_table = results_table.sort_values(by="SCORE", ascending=False)
-    results_table = results_table.set_index("NAME")
-    st.table(results_table)
+        # LOOP THROUGH ALL THE RESUME
+        for resume in resume_files:
+            
+            # EXTRACT APPLICANT NAME
+            applicant_name = resume.name.replace(".pdf", "")
+            name_list.append(applicant_name)
+    
+            # EXTRACT TEXT AND SUMMARIZE RESUME CONTENT
+            content = extract_text(resume)
+            content_summary = summarize_resume(content, GOOGLE_API_KEY)
+            summary_list.append(content_summary)
+    
+            # GENERATE RESUME SCORE AND ANALYSIS
+            resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
+            score_list.append(resume_score)
+            analysis_list.append(resume_analysis)
+        
+        # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
+        results_table = pd.DataFrame({"NAME": name_list,
+                           "SUMMARY": summary_list,
+                           "ANALYSIS": analysis_list,
+                           "SCORE": score_list,})
+        results_table = results_table.sort_values(by="SCORE", ascending=False)
+        results_table = results_table.set_index("NAME")
+        st.table(results_table)
