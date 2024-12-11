@@ -40,8 +40,8 @@ button {
 /* ADJUST TOP PADDING */
 .block-container {
     padding-top: 0rem;
-    padding-bottom: 0rem;
-    margin-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
 }
 /* REMOVE TEXT LINK */
 [data-testid="stHeaderActionElements"] {
