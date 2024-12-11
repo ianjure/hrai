@@ -7,6 +7,8 @@ GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # PAGE CONFIGURATION
 st.set_page_config(page_title="WorkFit AI", layout="wide")
+with open( "style.css" ) as css:
+    st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 # MAIN USER INTERFACE
 st.title("HR Resume Screening Assistance Tool")
