@@ -62,10 +62,7 @@ def score_resume(resume_summary, job_description, api_key):
                 
                 And give it a score ranging from 1-100.
                 
-                Follow this format and answer directly:
-                The score - Short explanation (1 paragraph)
-                
-                For example:
+                Follow this format example:
                 90 - The candidate's skills and experience align strongly with the job requirements, with relevant expertise in key areas.
                 """
     prompt = PromptTemplate.from_template(template)
