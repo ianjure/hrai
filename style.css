@@ -97,6 +97,7 @@ div[data-testid="stStatusWidget"] {
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
+    margin: 0;
 }
 small {
     font-family: 'Poppins', sans-serif !important;
