@@ -18,21 +18,16 @@ st.markdown("<h2 style='text-align: center;'>HR Resume Screening Assistance Tool
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
 with st.container(border=True):
-    column1, column2 = st.columns(2)
-
-    with column1:
-            job_description = st.text_area("**Enter the Job Description**")
-
-    with column2:
-            resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
-                                            accept_multiple_files=True)
-            
-            if job_description and resume_files:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
-                                            type="primary", use_container_width=True)
-            else:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
-                                            type="primary", use_container_width=True)
+    job_description = st.text_area("**Enter the Job Description**")
+    resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
+                                    accept_multiple_files=True)
+    
+    if job_description and resume_files:
+        automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
+                                    type="primary", use_container_width=True)
+    else:
+        automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
+                                    type="primary", use_container_width=True)
 
 # WHEN BUTTON IS CLICKED
 if automate_button:
