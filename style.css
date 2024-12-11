@@ -72,3 +72,11 @@ div[data-testid="stStatusWidget"] {
 [data-testid="stToolbar"] {
     display: none;
 }
+/* ADJUST TEXT AREA HEIGHT */
+[id="text_area_1"] {
+    height: 20rem;
+}
+/* CONTAINER BACKGROUND COLOR */
+[class="st-emotion-cache-4uzi61 eiemyj5"] {
+    background-color: blue;
+}
