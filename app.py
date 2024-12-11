@@ -11,16 +11,17 @@ st.set_page_config(page_title="WorkFit AI", layout="wide")
 # MAIN USER INTERFACE
 st.title("HR Resume Screening Assistance Tool")
 
-job_description = st.text_area("Enter the job description")
-resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
-                                accept_multiple_files=True)
-
-if job_description and resume_files:
-    automate_button = st.button("Automate Screening", disabled=False,
-                                type="primary", use_container_width=True)
-else:
-    automate_button = st.button("Automate Screening", disabled=True,
-                                type="primary", use_container_width=True)
+with st.container(border=True):
+    job_description = st.text_area("Enter the job description")
+    resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
+                                    accept_multiple_files=True)
+    
+    if job_description and resume_files:
+        automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
+                                    type="primary", use_container_width=True)
+    else:
+        automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
+                                    type="primary", use_container_width=True)
 
 if automate_button:
     name_list = []
