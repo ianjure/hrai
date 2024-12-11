@@ -79,7 +79,6 @@ div[data-testid="stStatusWidget"] {
 }
 /* ADJUST TEXT AREA HEIGHT */
 [id="text_area_1"] {
-    height: 15rem;
     background-color: white;
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
