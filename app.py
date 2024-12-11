@@ -11,16 +11,16 @@ with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 # MAIN USER INTERFACE
-st.title("HR Resume Screening Assistance Tool")
+st.title("Analyze and Rank Applications in Seconds!")
 
 with st.container(border=True):
     column1, column2 = st.columns(2)
 
     with column1:
-            job_description = st.text_area("Enter the job description")
+            job_description = st.text_area("Enter the Job Description")
 
     with column2:
-            resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
+            resume_files = st.file_uploader("Upload the Resume/s", type=['pdf'],
                                             accept_multiple_files=True)
             
             if job_description and resume_files:
@@ -34,7 +34,7 @@ if automate_button:
     name_list = []
     summary_list = []
     score_list = []
-    description_list = []
+    analysis_list = []
 
     # LOOP THROUGH ALL THE RESUME
     for resume in resume_files:
@@ -49,15 +49,15 @@ if automate_button:
         summary_list.append(content_summary)
 
         # GENERATE RESUME SCORE AND DESCRIPTION
-        resume_score, resume_description = score_resume(content_summary, job_description, GOOGLE_API_KEY)
+        resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
         score_list.append(resume_score)
-        description_list.append(resume_description)
+        analysis_list.append(resume_analysis)
     
     # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-    results_table = pd.DataFrame({"Name": name_list,
-                       "Summary": summary_list,
-                       "Description": description_list,
-                       "Score": score_list,})
-    results_table = results_table.sort_values(by='Score', ascending=False)
-    results_table = results_table.set_index('Name')
+    results_table = pd.DataFrame({"NAME": name_list,
+                       "SUMMARY": summary_list,
+                       "ANALYSIS": analysis_list,
+                       "SCORE": score_list,})
+    results_table = results_table.sort_values(by="SCORE", ascending=False)
+    results_table = results_table.set_index("NAME")
     st.table(results_table)
