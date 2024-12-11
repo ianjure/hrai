@@ -24,7 +24,7 @@ with col2:
         resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
                                         accept_multiple_files=True)
         
-        col1_b, col2_b, col3_b = st.columns([1,1,1])
+        col1_b, col2_b, col3_b = st.columns([0.8,1,0.8])
         with col2_b:
             if job_description and resume_files:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
