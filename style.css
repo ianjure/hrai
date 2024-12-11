@@ -98,5 +98,6 @@ div[data-testid="stStatusWidget"] {
     display: grid;
 }
 small {
+    font-family: 'Poppins', sans-serif !important;
     text-align: center;
 }
