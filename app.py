@@ -17,7 +17,7 @@ with open( "style.css" ) as css:
 st.markdown("<h2 style='text-align: center; padding-bottom: 0;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([0.06,1,0.06])
+col1, col2, col3 = st.columns([0.05,1,0.05])
 with col2:
     with st.container(border=True):
         job_description = st.text_area("**Job Description**", height=200)
