@@ -38,7 +38,7 @@ button {
 }
 /* ADJUST HEADER */
 [data-testid="stHeader"] {
-    height: 4.5rem;
+    height: 5rem;
     width: auto;
     z-index: 1;
 }
