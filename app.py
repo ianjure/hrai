@@ -47,7 +47,7 @@ if automate_button:
     
     # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
     results_table = pd.DataFrame({"Name": name_list,
-                       "Resume Summary:": summary_list,
+                       "Summary": summary_list,
                        "Description": description_list,
                        "Score": score_list,})
     results_table = results_table.sort_values(by='Score', ascending=False)
