@@ -79,7 +79,7 @@ div[data-testid="stStatusWidget"] {
 }
 /* ADJUST TEXT AREA HEIGHT */
 [id="text_area_1"] {
-    background-color: #e0ecfc;
+    background-color: white;
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
 }
@@ -87,9 +87,9 @@ div[data-testid="stStatusWidget"] {
 [class="st-emotion-cache-4uzi61 eiemyj5"] {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
-    background-color: #ffffff;
+    background-color: #DEE1E3;
     border: solid 0.5px #e0ecfc;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
 }
 /* STYLE FILE DROP */
@@ -99,7 +99,7 @@ div[data-testid="stStatusWidget"] {
     padding-right: 4rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #e0ecfc;
+    background-color: white;
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
