@@ -52,18 +52,21 @@ def score_resume(resume_summary, job_description, api_key):
     
     # INITIALIZE PROMPT TEMPLATE
     template = """
-                You are an AI that helps HR in screening applicant's resumes.
+                You are an AI that helps HR in screening applicants' resumes.
 
                 Based on this resume summary:
                 {resume_summary}
-
+                
                 Analyze if the summary fits in this job description:
                 {job_description}
-
+                
                 And give it a score ranging from 1-100.
-
+                
                 Follow this format and answer directly:
                 The score - Short explanation (1 paragraph)
+                
+                For example:
+                90 - The candidate's skills and experience align strongly with the job requirements, with relevant expertise in key areas.
                 """
     prompt = PromptTemplate.from_template(template)
 
@@ -76,7 +79,7 @@ def score_resume(resume_summary, job_description, api_key):
     print(result)
 
     # EXTRACT SCORE AND DESCRIPTION
-    score = int(result.split("-")[0].strip())
-    description = result.split("-")[1]
+    score = int(result.split(" - ")[0])
+    description = result.split(" - ")[1]
 
     return score, description
