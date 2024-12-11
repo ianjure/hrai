@@ -94,8 +94,8 @@ div[data-testid="stStatusWidget"] {
     display: grid;
     padding-left: 4rem;
     padding-right: 4rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 [data-testid="stFileUploaderDropzoneInstructions"] {
     display: grid;
@@ -103,6 +103,7 @@ div[data-testid="stStatusWidget"] {
 }
 [class="st-emotion-cache-yckwz8 es2srfl2"] {
     margin: 0;
+    display: none;
 }
 small {
     font-family: 'Poppins', sans-serif !important;
