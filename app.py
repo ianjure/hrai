@@ -14,7 +14,7 @@ with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 # MAIN USER INTERFACE
-st.markdown("<h2 style='text-align: center;'>HR Screening Assistant Tool</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='text-align: center;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
 with st.container(border=True):
