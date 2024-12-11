@@ -6,15 +6,14 @@ from utils import extract_text, summarize_resume, score_resume
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # PAGE CONFIGURATION
-st.set_page_config(page_title="HR AI", layout="wide")
+st.set_page_config(page_title="WorkFit AI", layout="wide")
 
 # MAIN USER INTERFACE
-st.title("HR resume screening assistance tool")
+st.title("HR Resume Screening Assistance Tool")
 
 job_description = st.text_area("Enter the job description")
-resume_files = st.file_uploader("Upload the resumes", type=['pdf'],
-                             help="Make sure that all files are in PDF format",
-                             accept_multiple_files=True)
+resume_files = st.file_uploader("Upload the resume/s", type=['pdf'],
+                                accept_multiple_files=True)
 
 if job_description and resume_files:
     automate_button = st.button("Automate Screening", disabled=False,
