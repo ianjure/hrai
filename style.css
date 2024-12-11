@@ -75,8 +75,9 @@ div[data-testid="stStatusWidget"] {
 /* ADJUST TEXT AREA HEIGHT */
 [id="text_area_1"] {
     height: 20rem;
+    background-color: white;
 }
 /* CONTAINER BACKGROUND COLOR */
 [class="st-emotion-cache-4uzi61 eiemyj5"] {
-    background-color: blue;
+    background-color: #d7e7fb;
 }
