@@ -78,12 +78,12 @@ with col2:
                 analysis_list.append(resume_analysis)
         
         # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-        results_table = pd.DataFrame({"NAME": name_list,
-                           "SUMMARY": summary_list,
-                           "ANALYSIS": analysis_list,
-                           "SCORE": score_list,})
-        results_table = results_table.sort_values(by="SCORE", ascending=False)
-        results_table = results_table.set_index("NAME")
+        results_table = pd.DataFrame({"Name": name_list,
+                           "Summary": summary_list,
+                           "Analysis": analysis_list,
+                           "Score": score_list,})
+        results_table = results_table.sort_values(by="Score", ascending=False)
+        results_table = results_table.set_index("Name")
         st.table(results_table.head())
 
         st.session_state.generated = True
