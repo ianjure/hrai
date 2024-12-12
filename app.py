@@ -14,6 +14,14 @@ with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 # HANDLING SESSION STATES
+if job_description not in st.session_state:
+    st.session_state.job_description = None
+if resume_files not in st.session_state:
+    st.session_state.resume_files = None
+if results_table not in st.session_state:
+    st.session_state.results_table = None
+if top_results not in st.session_state:
+    st.session_state.top_results = None
 if 'run_button' in st.session_state and st.session_state.run_button == True:
     st.session_state.running = True
 else:
@@ -49,6 +57,8 @@ with col2:
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
+         st.session_state.job_description = job_description
+         st.session_state.resume_files = resume_files
 
         with st.spinner("Analyzing and ranking the applicants. Please wait."):
             name_list = []
@@ -80,6 +90,10 @@ with col2:
                            "SCORE": score_list,})
         results_table = results_table.sort_values(by="SCORE", ascending=False)
         results_table = results_table.set_index("NAME")
-        st.table(results_table)
+        st.table(results_table.head())
 
         st.session_state.generated = True
+        st.session_state.results_table = results_table
+        st.session_state.top_results = results_table.head()
+
+        st.rerun()
