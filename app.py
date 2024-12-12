@@ -98,7 +98,7 @@ with col2:
                                                file_name='Ranked Applicants - WorkFit AI.csv',
                                                mime='text/csv')
 
-        tab1, tab2 = st.tabs(["Overview", "Analysis"])
+        tab1, tab2 = st.tabs(["Summary", "Analysis"])
         with tab1:
             st.table(st.session_state.results[["Summary", "Score"]].head())
         with tab2:
