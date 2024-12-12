@@ -21,7 +21,7 @@ col1, col2, col3 = st.columns([0.05,1,0.05])
 with col2:
     with st.container(border=True):
         job_description = st.text_area("**Job Description**", height=200,
-                                       help="Please provide a detailed job description, including responsibilities, qualifications, and experience requirements.")
+                                       help="Please provide a detailed job description,\nincluding responsibilities, qualifications,\nand experience requirements.")
         resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
                                         help="PDF files only.",
                                         accept_multiple_files=True)
