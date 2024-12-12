@@ -82,9 +82,11 @@ with col2:
         st.session_state.generated = True
         st.session_state.results = results_table
 
+    st.divider()
+
     # SHOW DATAFRAME
     if st.session_state.generated:
-        st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
         st.table(st.session_state.results.head())
     
     # MODAL DIALOG FOR ALL RESULTS
