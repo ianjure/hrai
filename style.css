@@ -14,13 +14,9 @@ h2 {
   padding-bottom: 0;
   margin-top: -0.5rem;
 }
-/* STYLE SUBTITLE */
 h4 {
   font-family: 'Poppins', sans-serif !important;
-  font-size: 1.2rem;
-  text-align: center;
   font-weight: 300;
-  margin-top: -1rem;
 }
 span {
   font-family: 'Poppins', sans-serif !important;
