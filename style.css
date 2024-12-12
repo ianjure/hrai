@@ -25,6 +25,13 @@ a {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
 }
+[data-testid="stTableStyledTable"] {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300;
+}
+[data-testid="stTableStyledTable"] th {
+  font-weight: bold;
+}
 /* STYLE BUTTON */
 [class="st-emotion-cache-1cfymjn e1obcldf2"] {
     display: none;
