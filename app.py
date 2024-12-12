@@ -13,6 +13,11 @@ st.logo("logo.svg")
 with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
+if 'generate_button' in st.session_state and st.session_state.generate_button == True:
+    st.session_state.running = True
+else:
+    st.session_state.running = False
+
 # MAIN USER INTERFACE
 st.markdown("<h2 style='text-align: center; padding-bottom: 0; margin-top: -0.5rem;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
 st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300; margin-top: -0.5rem;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
@@ -29,53 +34,37 @@ with col2:
         col1_b, col2_b, col3_b = st.columns([0.6,1,0.6])
         with col2_b:
             if job_description and resume_files:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
-                                            type="primary", use_container_width=True)
-                bttn = """
-                <button class="buttonload">
-                  <i class="fa fa-refresh fa-spin"></i>
-                </button>
-                <style>
-                    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-                </style>
-                """
-                st.markdown(bttn, unsafe_allow_html=True)
+                automate_button = st.button("**AUTOMATE SCREENING**", disabled=st.session_state.running,
+                                            key='run_button', type="primary", use_container_width=True)
             else:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
-                bttn = """
-                <button class="buttonload">
-                  <i class="fa fa-refresh fa-spin"></i>
-                </button>
-                <style>
-                    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-                </style>
-                """
-                st.markdown(bttn, unsafe_allow_html=True)
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
-        name_list = []
-        summary_list = []
-        score_list = []
-        analysis_list = []
-    
-        # LOOP THROUGH ALL THE RESUME
-        for resume in resume_files:
-            
-            # EXTRACT APPLICANT NAME
-            applicant_name = resume.name.replace(".pdf", "")
-            name_list.append(applicant_name)
-    
-            # EXTRACT TEXT AND SUMMARIZE RESUME CONTENT
-            content = extract_text(resume)
-            content_summary = summarize_resume(content, GOOGLE_API_KEY)
-            summary_list.append(content_summary)
-    
-            # GENERATE RESUME SCORE AND ANALYSIS
-            resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
-            score_list.append(resume_score)
-            analysis_list.append(resume_analysis)
+
+        with st.spinner("Loading..."):
+            name_list = []
+            summary_list = []
+            score_list = []
+            analysis_list = []
+        
+            # LOOP THROUGH ALL THE RESUME
+            for resume in resume_files:
+                
+                # EXTRACT APPLICANT NAME
+                applicant_name = resume.name.replace(".pdf", "")
+                name_list.append(applicant_name)
+        
+                # EXTRACT TEXT AND SUMMARIZE RESUME CONTENT
+                content = extract_text(resume)
+                content_summary = summarize_resume(content, GOOGLE_API_KEY)
+                summary_list.append(content_summary)
+        
+                # GENERATE RESUME SCORE AND ANALYSIS
+                resume_score, resume_analysis = score_resume(content_summary, job_description, GOOGLE_API_KEY)
+                score_list.append(resume_score)
+                analysis_list.append(resume_analysis)
         
         # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
         results_table = pd.DataFrame({"NAME": name_list,
