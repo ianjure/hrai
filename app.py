@@ -37,6 +37,10 @@ with col2:
                 </button>
                 <style>
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+                    [class="buttonload"] {
+                        display: block
+                    }
                 </style>
                 """
                 st.markdown(bttn, unsafe_allow_html=True)
@@ -49,6 +53,10 @@ with col2:
                 </button>
                 <style>
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+                    [class="buttonload"] {
+                        display: block
+                    }
                 </style>
                 """
                 st.markdown(bttn, unsafe_allow_html=True)
