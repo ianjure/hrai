@@ -6,7 +6,7 @@ from utils import extract_text, summarize_resume, score_resume
 # INITIALIZE GEMINI API KEY
 GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
-# PAGE CONFIGURATION
+# PAGE CONFIGURATION AND STYLING
 icon = Image.open("icon.png")
 st.set_page_config(page_title="WorkFit AI", layout="wide", page_icon=icon)
 st.logo("logo.svg")
@@ -82,17 +82,17 @@ with col2:
         st.session_state.generated = True
         st.session_state.results = results_table
 
-    # SHOW RESULTS
+    # SHOW RESULTS FROM THE STORED DATAFRAME
     if st.session_state.generated:
         st.divider()
         
-        results_col1, results_col2, results_col3 = st.columns([1,1,0.5])
-        with results_col1:
+        col1_r, col2_r, col3_r = st.columns([1,1,0.5])
+        with col1_r:
             if len(st.session_state.results) > 5:
                 st.markdown(f"<h4 style='font-size: 1.4rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
             else:
                 st.markdown(f"<h4 style='font-size: 1.4rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top Applicants</h4>", unsafe_allow_html=True)
-        with results_col3:
+        with col3_r:
             export_button = st.download_button("**EXPORT AS CSV**", type="secondary", use_container_width=True,
                                                data=st.session_state.results.to_csv(),
                                                file_name='Ranked Applicants - WorkFit AI.csv',
