@@ -32,7 +32,7 @@ with col2:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
                 bttn = """
-                <button class="buttonload">
+                <button class="buttonload" style='box-sizing: border-box; font-family: Poppins, sans-serif; align-items: center; width: 426.031px;'>
                   <i class="fa fa-refresh fa-spin"></i>Loading
                 </button>
                 <style>
