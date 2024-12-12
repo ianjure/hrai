@@ -32,10 +32,10 @@ with col2:
         col1_b, col2_b, col3_b = st.columns([0.6,1,0.6])
         with col2_b:
             if job_description and resume_files and st.session_state.not_generating:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
+                automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             key='generate_button', type="primary", use_container_width=True)
             else:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
+                automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
                                             type="primary", use_container_width=True)
 
     # WHEN BUTTON IS CLICKED
