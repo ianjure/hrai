@@ -133,9 +133,6 @@ small {
     font-family: 'Poppins', sans-serif !important;
     text-align: center;
 }
-[data-testid="stFileUploaderPagination"] {
-    margin_bottom: 0rem;
-}
 /* STYLE SPINNER */
 [class="st-emotion-cache-j78z8c edrijs92"] {
     margin-bottom: -1.3rem;
