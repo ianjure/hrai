@@ -83,4 +83,5 @@ with col2:
 
         if show_button:
             @st.dialog("All results")
-            st.table(results_table)
+            def show_all_results():
+                st.table(results_table)
