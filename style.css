@@ -32,16 +32,6 @@ a {
 }
 [data-testid="stTableStyledTable"] th {
     font-weight: bold;
-    text-align: center;
-}
-[data-testid="stTableStyledTable"] td {
-    text-align: justify;
-}
-.st-emotion-cache-1mcdgbr.e1to1k6i1 {
-    text-align: justify;
-}
-[class="st-emotion-cache-gdzsw5 e1to1k6i2"] {
-    text-align: center;
 }
 /* STYLE BUTTON */
 [class="st-emotion-cache-1cfymjn e1obcldf2"] {
