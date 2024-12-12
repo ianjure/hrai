@@ -18,6 +18,10 @@ if 'run_button' in st.session_state and st.session_state.run_button == True:
     st.session_state.running = True
 else:
     st.session_state.running = False
+if 'results' not in st.session_state:
+    st.session_state.results = None
+if 'generated' not in st.session_state:
+    st.session_state.generated = False
 
 # MAIN USER INTERFACE
 st.markdown("<h2 style='text-align: center; padding-bottom: 0; margin-top: -0.5rem;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
@@ -76,15 +80,20 @@ with col2:
         results_table = results_table.set_index("Name")
         st.table(results_table.head())
 
-        @st.dialog("All results")
-        def show_all_results(results_table):
-            st.table(results_table)
+        st.session_state.generated = True
+        st.session_state.results = results_table
 
-        show_col, export_col = st.columns(2)
-        with show_col:
-            show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
-        with export_col:
-            export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+# MODAL DIALOG FOR ALL RESULTS
+@st.dialog("All results")
+def show_all_results(results_table):
+    st.table(results_table)
 
-        if show_button:
-            show_all_results(results_table)
+if generated:
+    show_col, export_col = st.columns(2)
+    with show_col:
+        show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
+    with export_col:
+        export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+    
+    if show_button:
+        show_all_results(results_table)
