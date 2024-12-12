@@ -88,7 +88,7 @@ with col2:
 def show_all_results(results_table):
     st.table(results_table)
 
-if generated:
+if st.session_state.generated:
     show_col, export_col = st.columns(2)
     with show_col:
         show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
