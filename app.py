@@ -71,7 +71,7 @@ with col2:
                 analysis_list.append(resume_analysis)
         
         # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-        st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 400; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+        st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
         results_table = pd.DataFrame({"Name": name_list,
                            "Summary": summary_list,
                            "Analysis": analysis_list,
@@ -97,4 +97,4 @@ if st.session_state.generated:
         export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
     
     if show_button:
-        show_all_results(results_table)
+        show_all_results(st.session_state.results)
