@@ -31,6 +31,7 @@ a {
 }
 [data-testid="stBaseButton-primary"] {
     border-radius: 4rem;
+    margin-top: -1rem;
 }
 button {
   font-family: 'Poppins', sans-serif !important;
@@ -85,7 +86,7 @@ div[data-testid="stStatusWidget"] {
     border-radius: 0.49rem;
     border: solid 0.5px #DEE1E3;
 }
-/* CONTAINER BACKGROUND COLOR */
+/* STYLE CONTAINER */
 [class="st-emotion-cache-4uzi61 eiemyj5"] {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
@@ -93,6 +94,9 @@ div[data-testid="stStatusWidget"] {
     border: solid 1px #DEE1E3;
     border-radius: 1.2rem;
     box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
+}
+[class="stVerticalBlock st-emotion-cache-11ldsn9 eiemyj3"] {
+    gap: 0.5rem;
 }
 /* STYLE FILE DROP */
 [data-testid="stFileUploaderDropzone"] {
