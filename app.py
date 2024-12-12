@@ -39,6 +39,7 @@ with col2:
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
                 </style>
                 """
+                st.markdown(bttn, unsafe_allow_html=True)
             else:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
                                             type="primary", use_container_width=True)
@@ -50,6 +51,7 @@ with col2:
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
                 </style>
                 """
+                st.markdown(bttn, unsafe_allow_html=True)
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
