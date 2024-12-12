@@ -22,6 +22,7 @@ with col2:
     with st.container(border=True):
         job_description = st.text_area("**Job Description**", height=200)
         resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
+                                        help="PDF files only.",
                                         accept_multiple_files=True)
         
         col1_b, col2_b, col3_b = st.columns([0.6,1,0.6])
