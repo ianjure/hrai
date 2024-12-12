@@ -55,7 +55,7 @@ button {
 }
 /* ADJUST LOGO SIZE */
 [data-testid="stLogo"] {
-    width: 12rem;
+    width: 10rem;
     height: auto;
 }
 /* HIDE MENU */
