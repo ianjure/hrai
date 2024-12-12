@@ -82,16 +82,23 @@ with col2:
         st.session_state.generated = True
         st.session_state.results = results_table
 
-    # SHOW DATAFRAME
+    # SHOW RESULTS
     if st.session_state.generated:
         st.divider()
+        
         results_col1, results_col2, results_col3 = st.columns([1,1,0.5])
         with results_col1:
-            st.markdown(f"<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top {len(resume_files)} Applicants</h4>", unsafe_allow_html=True)
+            if len(resume_files) > 5:
+                st.markdown(f"<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+            else:
+                st.markdown(f"<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top Applicants</h4>", unsafe_allow_html=True)
         with results_col3:
-            export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+            export_button = st.download_button("**EXPORT AS CSV**", type="secondary", use_container_width=True,
+                                               data=st.session_state.results.to_csv(),
+                                               file_name='Ranked Applicants - WorkFit AI.csv',
+                                               mime='text/csv')
 
-        tab1, tab2 = st.tabs(["Overview", "Analysis"])
+        tab1, tab2 = st.tabs(["**Overview**", "**Analysis**"])
         with tab1:
             st.table(st.session_state.results[["Summary", "Score"]])
         with tab2:
