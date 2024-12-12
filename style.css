@@ -117,7 +117,7 @@ div[data-testid="stStatusWidget"] {
     padding-left: 4rem;
     padding-right: 4rem;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
     border: solid 0.5px #DEE1E3;
     background-color: white;
 }
@@ -132,6 +132,9 @@ div[data-testid="stStatusWidget"] {
 small {
     font-family: 'Poppins', sans-serif !important;
     text-align: center;
+}
+[data-testid="stFileUploaderPagination"] {
+    margin_bottom: 0rem;
 }
 /* STYLE SPINNER */
 [class="st-emotion-cache-j78z8c edrijs92"] {
