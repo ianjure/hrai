@@ -1,44 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 h1 {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 600;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
 }
 h2 {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 600;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600;
 }
 h4 {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 span {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
-  text-align: center;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
+    text-align: center;
 }
 p {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 a {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 /* STYLE TABLE */
 [data-testid="stTableStyledTable"] {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 [data-testid="stTableStyledTable"] th {
-  font-weight: bold;
-  text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
 [data-testid="stTableStyledTable"] td {
-  text-align: justify;
+    text-align: justify;
 }
 .st-emotion-cache-1mcdgbr.e1to1k6i1 {
-  text-align: justify;
+    text-align: justify;
+}
+[class="st-emotion-cache-gdzsw5 e1to1k6i2"] {
+    text-align: center;
 }
 /* STYLE BUTTON */
 [class="st-emotion-cache-1cfymjn e1obcldf2"] {
@@ -48,9 +51,12 @@ a {
     border-radius: 4rem;
     margin-top: 0rem;
 }
+[data-testid="stBaseButton-secondary"] {
+    border-radius: 4rem;
+}
 button {
-  font-family: 'Poppins', sans-serif !important;
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
 /* ADJUST HEADER */
 [data-testid="stHeader"] {
@@ -134,29 +140,6 @@ div[data-testid="stStatusWidget"] {
 small {
     font-family: 'Poppins', sans-serif !important;
     text-align: center;
-}
-.buttonload {
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-    font-size: 16px;
-    line-height: 25.6px;
-    overflow: visible;
-    cursor: pointer;
-    appearance: button;
-    align-items: center;
-    background-color: rgb(20, 104, 215);
-    border-radius: 64px;
-    color: rgb(255, 255, 255);
-    display: inline-flex;
-    font-weight: 400;
-    justify-content: center;
-    min-height: 40px;
-    padding: 4px 12px;
-    user-select: none;
-    width: 100%;
-    outline: rgb(255, 255, 255) none 0px;
-    text-size-adjust: 100%;
-    border: 1px solid rgb(24, 114, 234);
 }
 /* STYLE SPINNER */
 [class="st-emotion-cache-j78z8c edrijs92"] {
