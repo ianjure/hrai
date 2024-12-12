@@ -18,6 +18,8 @@ if 'run_button' in st.session_state and st.session_state.run_button == True:
     st.session_state.running = True
 else:
     st.session_state.running = False
+if 'generated' not in session_state:
+    st.session_state.generated = False
 
 # MAIN USER INTERFACE
 st.markdown("<h2 style='text-align: center; padding-bottom: 0; margin-top: -0.5rem;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
@@ -34,12 +36,16 @@ with col2:
         
         col1_b, col2_b, col3_b = st.columns([0.6,1,0.6])
         with col2_b:
-            if job_description and resume_files:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=st.session_state.running,
-                                            key='run_button', type="primary", use_container_width=True)
+            if st.session_state.generated:
+                export_button = st.button("**EXPORT AS CSV**", type="primary",
+                                          use_container_width=True)
             else:
-                automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
-                                            type="primary", use_container_width=True)
+                if job_description and resume_files:
+                    automate_button = st.button("**AUTOMATE SCREENING**", disabled=st.session_state.running,
+                                                key='run_button', type="primary", use_container_width=True)
+                else:
+                    automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
+                                                type="primary", use_container_width=True)
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
@@ -75,3 +81,5 @@ with col2:
         results_table = results_table.sort_values(by="SCORE", ascending=False)
         results_table = results_table.set_index("NAME")
         st.table(results_table)
+
+        st.session_state.generated = True
