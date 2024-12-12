@@ -82,23 +82,23 @@ with col2:
         st.session_state.generated = True
         st.session_state.results = results_table
 
-# SHOW DATAFRAME
-if st.session_state.generated:
-    st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
-    st.table(st.session_state.results.head())
-
-# MODAL DIALOG FOR ALL RESULTS
-@st.dialog("All results", width="large")
-def show_all_results(results_table):
-    st.table(results_table)
-
-# SHOW MODAL DIALOG BUTTON AND EXPORT BUTTON
-if st.session_state.generated:
-    show_col, export_col = st.columns(2)
-    with show_col:
-        show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
-    with export_col:
-        export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+    # SHOW DATAFRAME
+    if st.session_state.generated:
+        st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+        st.table(st.session_state.results.head())
     
-    if show_button:
-        show_all_results(st.session_state.results)
+    # MODAL DIALOG FOR ALL RESULTS
+    @st.dialog("All results", width="large")
+    def show_all_results(results_table):
+        st.table(results_table)
+    
+    # SHOW MODAL DIALOG BUTTON AND EXPORT BUTTON
+    if st.session_state.generated:
+        show_col, export_col = st.columns(2)
+        with show_col:
+            show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
+        with export_col:
+            export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+        
+        if show_button:
+            show_all_results(st.session_state.results)
