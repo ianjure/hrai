@@ -26,33 +26,6 @@ a {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
 }
-/* STYLE TABLE */
-[data-testid="stTableStyledTable"] {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-[data-testid="stTableStyledTable"] th {
-    font-weight: bold;
-}
-[data-testid="stTableStyledTable"] td {
-    text-align: center;
-}
-/* STYLE BUTTON */
-[class="st-emotion-cache-1cfymjn e1obcldf2"] {
-    display: none;
-}
-[data-testid="stBaseButton-primary"] {
-    border-radius: 4rem;
-    margin-top: 0rem;
-}
-[data-testid="stBaseButton-secondary"] {
-    border-radius: 4rem;
-}
-button {
-    font-family: 'Poppins', sans-serif !important;
-    font-weight: 300;
-}
 /* ADJUST HEADER */
 [data-testid="stHeader"] {
     height: 4.7rem;
@@ -149,4 +122,28 @@ small {
 }
 [class="st-emotion-cache-89jlt8 e121c1cl0"] {
     font-size: medium;
+}
+/* STYLE TABLE */
+[data-testid="stTableStyledTable"] {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+[data-testid="stTableStyledTable"] th {
+    font-weight: bold;
+}
+/* STYLE BUTTON */
+[class="st-emotion-cache-1cfymjn e1obcldf2"] {
+    display: none;
+}
+[data-testid="stBaseButton-primary"] {
+    border-radius: 4rem;
+    margin-top: 0rem;
+}
+[data-testid="stBaseButton-secondary"] {
+    border-radius: 4rem;
+}
+button {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300;
 }
