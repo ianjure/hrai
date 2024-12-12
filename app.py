@@ -35,7 +35,7 @@ with col2:
         with col2_b:
             if job_description and resume_files:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=st.session_state.running,
-                                            key='run_button', type="primary", use_container_width=True)
+                                            key='generate_button', type="primary", use_container_width=True)
             else:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
