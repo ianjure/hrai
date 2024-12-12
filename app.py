@@ -32,11 +32,11 @@ with col2:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
                 bttn = """
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
                 <button class="buttonload">
                   <i class="fa fa-refresh fa-spin"></i>Loading
                 </button>
                 <style>
+                    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
                     .buttonload {
                         box-sizing: border-box;
                         font-family: Poppins, sans-serif;
@@ -55,7 +55,7 @@ with col2:
                         min-height: 40px;
                         padding: 4px 12px;
                         user-select: none;
-                        width: 426.031px;
+                        width: 100%;
                         outline: rgb(255, 255, 255) none 0px;
                         text-size-adjust: 100%;
                         border: 1px solid rgb(24, 114, 234);
