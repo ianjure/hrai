@@ -43,7 +43,7 @@ with col2:
     # WHEN BUTTON IS CLICKED
     if automate_button:
 
-        with st.spinner("Loading..."):
+        with st.spinner("Analyzing and ranking the applicants. Please wait."):
             name_list = []
             summary_list = []
             score_list = []
@@ -66,11 +66,11 @@ with col2:
                 score_list.append(resume_score)
                 analysis_list.append(resume_analysis)
         
-                # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-                results_table = pd.DataFrame({"NAME": name_list,
-                                   "SUMMARY": summary_list,
-                                   "ANALYSIS": analysis_list,
-                                   "SCORE": score_list,})
-                results_table = results_table.sort_values(by="SCORE", ascending=False)
-                results_table = results_table.set_index("NAME")
-                st.table(results_table)
+        # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
+        results_table = pd.DataFrame({"NAME": name_list,
+                           "SUMMARY": summary_list,
+                           "ANALYSIS": analysis_list,
+                           "SCORE": score_list,})
+        results_table = results_table.sort_values(by="SCORE", ascending=False)
+        results_table = results_table.set_index("NAME")
+        st.table(results_table)
