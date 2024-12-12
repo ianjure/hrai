@@ -29,11 +29,14 @@ a {
 [data-testid="stTableStyledTable"] {
   font-family: 'Poppins', sans-serif !important;
   font-weight: 300;
-  text-align: justify;
 }
 [data-testid="stTableStyledTable"] th {
   font-weight: bold;
   text-align: center;
+}
+[data-testid="stTableStyledTable"] td {
+  font-weight: bold;
+  text-align: justify;
 }
 /* STYLE BUTTON */
 [class="st-emotion-cache-1cfymjn e1obcldf2"] {
@@ -152,4 +155,8 @@ small {
     outline: rgb(255, 255, 255) none 0px;
     text-size-adjust: 100%;
     border: 1px solid rgb(24, 114, 234);
+}
+/* STYLE SPINNER */
+[class="st-emotion-cache-j78z8c edrijs92"] {
+    margin-bottom: -1rem;
 }
