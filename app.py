@@ -86,21 +86,14 @@ with col2:
 
     # SHOW DATAFRAME
     if st.session_state.generated:
-        st.markdown("<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
-        st.table(st.session_state.results.head())
-    
-    # MODAL DIALOG FOR ALL RESULTS
-    @st.dialog("All results", width="large")
-    def show_all_results(results_table):
-        st.table(results_table)
-    
-    # SHOW MODAL DIALOG BUTTON AND EXPORT BUTTON
-    if st.session_state.generated:
-        show_col, export_col = st.columns(2)
-        with show_col:
-            show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
-        with export_col:
+        results_col1, results_col2, results_col3 = st.columns([1,0.5,1])
+        with results_col1:
+            st.markdown("<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+        with results_col3:
             export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
-        
-        if show_button:
-            show_all_results(st.session_state.results)
+
+        tab1, tab2 = st.tabs(["Overview", "Analysis"])
+        with tab1:
+            st.table(st.session_state.results[["Summary", "Score"]])
+        with tab2:
+            st.table(st.session_state.results["Analysis"])
