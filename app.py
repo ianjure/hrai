@@ -31,9 +31,25 @@ with col2:
             if job_description and resume_files:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
+                bttn = """
+                <button class="buttonload">
+                  <i class="fa fa-refresh fa-spin"></i>Loading
+                </button>
+                <style>
+                    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+                </style>
+                """
             else:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=True,
                                             type="primary", use_container_width=True)
+                bttn = """
+                <button class="buttonload">
+                  <i class="fa fa-refresh fa-spin"></i>Loading
+                </button>
+                <style>
+                    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+                </style>
+                """
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
