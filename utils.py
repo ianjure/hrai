@@ -4,7 +4,6 @@ from langchain.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 def extract_text(pdf):
-
     # INITIALIZE PDF READER OBJECT
     reader = PdfReader(pdf)
 
@@ -19,7 +18,6 @@ def extract_text(pdf):
     return content
 
 def summarize_resume(resume_content, api_key):
-
     # INITIALIZE GOOGLE GEMINI MODEL
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",
                                 temperature=0.5,
@@ -44,7 +42,6 @@ def summarize_resume(resume_content, api_key):
     return result
 
 def score_resume(resume_summary, job_description, api_key):
-
     # INITIALIZE GOOGLE GEMINI MODEL
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash",
                                 temperature=0.5,
