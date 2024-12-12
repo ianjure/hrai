@@ -35,7 +35,6 @@ a {
   text-align: center;
 }
 [data-testid="stTableStyledTable"] td {
-  font-weight: bold;
   text-align: justify;
 }
 /* STYLE BUTTON */
@@ -158,5 +157,5 @@ small {
 }
 /* STYLE SPINNER */
 [class="st-emotion-cache-j78z8c edrijs92"] {
-    margin-bottom: -1rem;
+    margin-bottom: -1.2rem;
 }
