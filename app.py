@@ -57,8 +57,8 @@ with col2:
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
-         st.session_state.job_description = job_description
-         st.session_state.resume_files = resume_files
+        st.session_state.job_description = job_description
+        st.session_state.resume_files = resume_files
 
         with st.spinner("Analyzing and ranking the applicants. Please wait."):
             name_list = []
