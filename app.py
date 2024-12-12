@@ -86,7 +86,7 @@ with col2:
 
     # SHOW DATAFRAME
     if st.session_state.generated:
-        results_col1, results_col2, results_col3 = st.columns([1,2,0.5])
+        results_col1, results_col2, results_col3 = st.columns([1,1,0.5])
         with results_col1:
             st.markdown("<h4 style='font-size: 1.2rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
         with results_col3:
