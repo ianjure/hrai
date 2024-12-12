@@ -35,7 +35,7 @@ a {
 [data-testid="stTableStyledTable"] th {
     font-weight: bold;
 }
-[class="st-emotion-cache-gdzsw5 e1to1k6i2"] {
+[data-testid="stTableStyledTable"] td {
     text-align: center;
 }
 /* STYLE BUTTON */
