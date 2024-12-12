@@ -20,7 +20,8 @@ st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300;
 col1, col2, col3 = st.columns([0.05,1,0.05])
 with col2:
     with st.container(border=True):
-        job_description = st.text_area("**Job Description**", height=200)
+        job_description = st.text_area("**Job Description**", height=200,
+                                       help="Please provide a detailed job description, including responsibilities, qualifications, and experience requirements.")
         resume_files = st.file_uploader("**Upload the Resume/s**", type=['pdf'],
                                         help="PDF files only.",
                                         accept_multiple_files=True)
