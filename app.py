@@ -33,7 +33,7 @@ with col2:
                                             type="primary", use_container_width=True)
                 bttn = """
                 <button class="buttonload">
-                  <i class="fa fa-refresh fa-spin"></i>Loading
+                  <i class="fa fa-refresh fa-spin"></i>
                 </button>
                 <style>
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
@@ -45,7 +45,7 @@ with col2:
                                             type="primary", use_container_width=True)
                 bttn = """
                 <button class="buttonload">
-                  <i class="fa fa-refresh fa-spin"></i>Loading
+                  <i class="fa fa-refresh fa-spin"></i>
                 </button>
                 <style>
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
