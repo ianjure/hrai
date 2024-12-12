@@ -14,14 +14,6 @@ with open( "style.css" ) as css:
     st.markdown(f'<style>{css.read()}</style>', unsafe_allow_html=True)
 
 # HANDLING SESSION STATES
-if 'job_description' not in st.session_state:
-    st.session_state.job_description = None
-if 'resume_files' not in st.session_state:
-    st.session_state.resume_files = None
-if 'results_table' not in st.session_state:
-    st.session_state.results_table = None
-if 'top_results' not in st.session_state:
-    st.session_state.top_results = None
 if 'run_button' in st.session_state and st.session_state.run_button == True:
     st.session_state.running = True
 else:
@@ -51,9 +43,6 @@ with col2:
 
     # WHEN BUTTON IS CLICKED
     if automate_button:
-        st.session_state.job_description = job_description
-        st.session_state.resume_files = resume_files
-
         with st.spinner("Analyzing and ranking the applicants. Please wait."):
             name_list = []
             summary_list = []
@@ -86,12 +75,12 @@ with col2:
         results_table = results_table.set_index("Name")
         st.table(results_table.head())
 
-        st.session_state.generated = True
-        st.session_state.results_table = results_table
-        st.session_state.top_results = results_table.head()
-
         show_col, export_col = st.columns(2)
         with show_col:
             show_button = st.button("**SHOW ALL RESULTS**", type="secondary", use_container_width=True)
         with export_col:
             export_button = st.button("**EXPORT AS CSV**", type="secondary", use_container_width=True)
+
+        if show_button:
+            @st.dialog("All results")
+            st.table(results_table)
