@@ -15,7 +15,7 @@ with open( "style.css" ) as css:
 
 # MAIN USER INTERFACE
 st.markdown("<h2 style='text-align: center; padding-bottom: 0; margin-top: -0.5rem;'>HR Resume Screening Assistance Tool</h2>", unsafe_allow_html=True)
-st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300; margin-top: -1rem;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='font-size: 1.2rem; text-align: center; font-weight: 300; margin-top: -0.5rem;'>Analyze and rank applications in seconds!</h4>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([0.05,1,0.05])
 with col2:
