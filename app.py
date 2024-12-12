@@ -33,7 +33,7 @@ with col2:
                                             type="primary", use_container_width=True)
                 bttn = """
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                <button class="buttonload"pins'>
+                <button class="buttonload">
                   <i class="fa fa-refresh fa-spin"></i>Loading
                 </button>
                 <style>
