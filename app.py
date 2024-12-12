@@ -70,21 +70,25 @@ with col2:
                 score_list.append(resume_score)
                 analysis_list.append(resume_analysis)
         
-        # CREATE AND SHOW DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
-        st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+        # CREATE DATAFRAME FROM THE SUMMARIES, SCORES, AND DESCRIPTIONS
         results_table = pd.DataFrame({"Name": name_list,
                            "Summary": summary_list,
                            "Analysis": analysis_list,
                            "Score": score_list,})
         results_table = results_table.sort_values(by="Score", ascending=False)
         results_table = results_table.set_index("Name")
-        st.table(results_table.head())
 
+        # STORE DATAFRAME TO SESSION STATES
         st.session_state.generated = True
         st.session_state.results = results_table
 
+# SHOW DATAFRAME
+if st.session_state.generated:
+    st.markdown("<h4 style='font-size: 1rem; text-align: left; font-weight: 600; margin-top: -0.5rem;'>Top 5 Applicants</h4>", unsafe_allow_html=True)
+    st.table(st.session_state.results.head())
+
 # MODAL DIALOG FOR ALL RESULTS
-@st.dialog("All results")
+@st.dialog("All results", width="large")
 def show_all_results(results_table):
     st.table(results_table)
 
