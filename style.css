@@ -120,3 +120,26 @@ small {
     font-family: 'Poppins', sans-serif !important;
     text-align: center;
 }
+.buttonload {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    line-height: 25.6px;
+    overflow: visible;
+    cursor: pointer;
+    appearance: button;
+    align-items: center;
+    background-color: rgb(20, 104, 215);
+    border-radius: 64px;
+    color: rgb(255, 255, 255);
+    display: inline-flex;
+    font-weight: 400;
+    justify-content: center;
+    min-height: 40px;
+    padding: 4px 12px;
+    user-select: none;
+    width: 100%;
+    outline: rgb(255, 255, 255) none 0px;
+    text-size-adjust: 100%;
+    border: 1px solid rgb(24, 114, 234);
+}
