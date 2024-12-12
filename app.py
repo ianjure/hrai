@@ -28,7 +28,7 @@ with col2:
         
         col1_b, col2_b, col3_b = st.columns([0.6,1,0.6])
         with col2_b:
-            if job_description and resume_files:
+            if not job_description and resume_files:
                 automate_button = st.button("**AUTOMATE SCREENING**", disabled=False,
                                             type="primary", use_container_width=True)
                 bttn = """
@@ -37,10 +37,6 @@ with col2:
                 </button>
                 <style>
                     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-
-                    [class="buttonload"] {
-                        display: block;
-                    }
                 </style>
                 """
                 st.markdown(bttn, unsafe_allow_html=True)
