@@ -29,7 +29,7 @@ a {
 [data-testid="stTableStyledTable"] {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 [data-testid="stTableStyledTable"] th {
     font-weight: bold;
