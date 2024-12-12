@@ -18,7 +18,7 @@ if 'run_button' in st.session_state and st.session_state.run_button == True:
     st.session_state.running = True
 else:
     st.session_state.running = False
-if 'generated' not in session_state:
+if 'generated' not in st.session_state:
     st.session_state.generated = False
 
 # MAIN USER INTERFACE
