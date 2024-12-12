@@ -100,6 +100,6 @@ with col2:
 
         tab1, tab2 = st.tabs(["Overview", "Analysis"])
         with tab1:
-            st.table(st.session_state.results[["Summary", "Score"]])
+            st.table(st.session_state.results[["Summary", "Score"]].head())
         with tab2:
-            st.table(st.session_state.results["Analysis"])
+            st.table(st.session_state.results[["Analysis", "Score"]].head())
